@@ -1,3 +1,10 @@
+" Autosave (Space aw toggles)
+let g:muvim_autosave = 1
+augroup MuVimAutoSave
+  autocmd!
+  autocmd CursorHold,CursorHoldI * if get(g:, 'muvim_autosave', 1) | silent! update | endif
+augroup END
+
 au BufNewFile,BufRead /*.rasi setf css
 au BufNewFile,BufRead /*.html set filetype=html
 "au BufNewFile,BufRead /*.html set filetype=htmldjango

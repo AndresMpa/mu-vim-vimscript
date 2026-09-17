@@ -85,9 +85,11 @@ nmap <Leader>j :bprevious<CR>
 nmap <Leader>k :bnext<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>l :ls<CR>
+nmap <Leader>H :%bd\|e#\|bd#<CR>
+nmap <Leader>vv :on<CR>
 nmap <Leader>vj :split<CR>
 nmap <Leader>vk :vsplit<CR>
-nmap <leader>H :%bd\|e#\|bd#<cr>
+nmap <Leader>aw :call ToggleAutoSave()<CR>
 nnoremap <silent> <Leader>< :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>> :exe "resize " . (winheight(0) * 2/3)<CR>
 

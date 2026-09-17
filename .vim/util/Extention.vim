@@ -1,106 +1,21 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""FUNCTION"""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! HelpMapping()
-  let info = [
-        \"Current features",
-        \"\n",
-        \"\n",
-        \"# Basics",
-        \"\n",
-        \"w -> Write",
-        \"q -> Quite",
-        \"h -> Close file",
-        \"nj -> Previous",
-        \"k -> Next",
-        \"nl -> List",
-        \"b -> Buffers",
-        \"\n",
-        \"\n",
-        \"zf#j creates a fold from the cursor down # lines".
-        \"zf/string creates a fold from the cursor to string"
-        \"zj moves the cursor to the next fold"
-        \"zk moves the cursor to the previous fold"
-        \"zo opens a fold at the cursor"
-        \"zO opens all folds at the cursor"
-        \"zm increases the foldlevel by one"
-        \"zM closes all open folds"
-        \"zr decreases the foldlevel by one"
-        \"zR decreases the foldlevel to zero — all folds will be open"
-        \"zd deletes the fold at the cursor"
-        \"zE deletes all folds"
-        \"[z move to start of open fold"
-        \"]z move to end of open fold"
-        \"\n",
-        \"\n",
-        \"# File control",
-        \"\n",
-        \"vj -> Split horizontally",
-        \"vk -> Split vertically",
-        \"< -> Hide prompt",
-        \"> -> Expand promt",
-        \"\n",
-        \"\n",
-        \"# Motion mappings",
-        \"\n",
-        \"ss -> Search by line",
-        \"sf -> Search by files",
-        \"? or \ -> Search by characters",
-        \"n -> Search with nerdtree",
-        \"ff -> Search with ag (folders)",
-        \"fs -> Search with fzf (files)",
-        \"a -> Search using Ack",
-        \"\n",
-        \"\n",
-        \"# Replace text",
-        \"\n",
-        \"R -> Replace a with b",
-        \"\n",
-        \"\n",
-        \"# Git (Inmediate commands)",
-        \"gpl -> Git pull",
-        \"gps -> Git push",
-        \"gii -> Git init",
-        \"gsh -> Git show",
-        \"gbl -> Git blame",
-        \"gst -> Git status",
-        \"gc -> Git commit",
-        \"gaa -> Git add",
-        \"grv -> Git remote",
-        \"\n",
-        \"# Git (Writting)",
-        \"\n",
-        \"ga  -> Git add",
-        \"gsw -> Git switch",
-        \"gco -> Git checkout",
-        \"gcb -> Git checkout -b",
-        \"gll -> Git pull",
-        \"gpp -> Git push",
-        \"ggg -> Git (General command)",
-        \"\n",
-        \"\n",
-        \"# CoC",
-        \"\n",
-        \"cd -> Coc definition",
-        \"ct -> Coc type",
-        \"cg -> Coc implementation",
-        \"cr -> Coc references",
-        \"\n",
-        \"# Formatter",
-        \"\n",
-        \"f -> Prettier",
-        \"\n",
-        \"\n",
-        \"# Maintenance",
-        \"\n",
-        \"pc -> PlugClean",
-        \"pi -> PlugInstall",
-        \"pu -> PlugUpdate",
-        \"pd -> PlugUpgrade"]
+function! ToggleAutoSave()
+  let g:muvim_autosave = !get(g:, 'muvim_autosave', 1)
+  echo g:muvim_autosave ? 'autosave on' : 'autosave off'
+endfunction
 
-  for tip in info
-    execute "echo tip"
-  endfor
+function! HelpMapping()
+  let maps = execute('map <leader>')
+  let maps .= "\n" . execute('nmap U')
+  let maps .= "\n" . execute('nnoremap <C-t>')
+  belowright 16new
+  setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted
+  setlocal nowrap
+  file [muvim-maps]
+  call setline(1, split(maps, "\n"))
+  nnoremap <buffer> <silent> q :bd!<CR>
 endfunction
 
 " Note: I took this function from https://github.com/nschurmann/configs/blob/master/.vim/maps.vim
