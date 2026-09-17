@@ -48,7 +48,7 @@ Plug 'jalvesaq/Nvim-R'                            " R support
 """"""""""""""""""""""""""""""""""""""UTILITIES"""""""""""""""""""""""""""""""""""""
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " Markdown preview
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}                                           " Vim live server
+Plug 'turbio/bracey.vim', {'do': 'pnpm install --prefix server'}                                          " Vim live server
 Plug 'terryma/vim-multiple-cursors'                                                                       " Multicursor
 Plug 'preservim/nerdcommenter'                                                                            " Easy way to make commets
 "Plug 'wakatime/vim-wakatime'                                                                              " Data tracking
