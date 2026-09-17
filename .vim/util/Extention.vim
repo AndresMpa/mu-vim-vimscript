@@ -97,7 +97,7 @@ function! OpenServer(flag)
 
   "Start vue project
   if a:flag == "vue"
-    execute ":terminal npm run serve"
+    execute ":terminal pnpm run serve"
   endif
 
 endfunction

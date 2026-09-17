@@ -59,8 +59,7 @@ Most of these one will be required by [CoC](https://github.com/neoclide/coc.nvim
 if you don't want any of them try switch CoC for any other plugin such as
 [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
 
-- [npm](https://www.npmjs.com/get-npm)
-  (or [yarm](https://classic.yarnpkg.com/en/docs/install/#debian-stable))
+- [pnpm](https://pnpm.io/installation)
 - [nodejs](https://nodejs.org/es/download/)
 
 ### Optional
