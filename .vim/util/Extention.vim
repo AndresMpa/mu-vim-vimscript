@@ -31,21 +31,19 @@ endfunction
 
 " Function
 function! OpenTerminal()
-  " move to right most buffer
-  execute "normal \<C-l>"
-  execute "normal \<C-l>"
-  execute "normal \<C-l>"
-  execute "normal \<C-l>"
+  " File tree stays on the right; terminals open on the left.
+  execute "normal \<C-h>"
+  execute "normal \<C-h>"
+  execute "normal \<C-h>"
+  execute "normal \<C-h>"
 
   let bufNum = bufnr("%")
   let bufType = getbufvar(bufNum, "&buftype", "not found")
 
   if bufType == "terminal"
-    " close existing terminal
     execute "q"
   else
-    " open terminal
-    execute "vsp term://zsh"
+    execute "leftabove vsplit term://zsh"
 
     " turn off numbers
     execute "set nonu"
