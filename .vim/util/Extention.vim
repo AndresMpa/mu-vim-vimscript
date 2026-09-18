@@ -6,6 +6,15 @@ function! ToggleAutoSave()
   echo g:muvim_autosave ? 'autosave on' : 'autosave off'
 endfunction
 
+function! GitOnCurrentBranch(action)
+  let branch = trim(system('git branch --show-current'))
+  if a:action ==# 'pull'
+    execute 'Git pull origin ' . branch
+  elseif a:action ==# 'push'
+    execute 'Git push origin ' . branch
+  endif
+endfunction
+
 function! HelpMapping()
   let maps = execute('map <leader>')
   let maps .= "\n" . execute('nmap U')
