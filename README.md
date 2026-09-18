@@ -41,54 +41,22 @@ For the current Neovim stack, see [Current](https://github.com/AndresMpa/mu-vim)
 
 ## Prerequisites
 
-You need [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) or [Vim](https://www.vim.org/download.php), plus [vim-plug](https://github.com/junegunn/vim-plug).
+[Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) or [Vim](https://www.vim.org/download.php), plus [vim-plug](https://github.com/junegunn/vim-plug). CoC needs [Node.js](https://nodejs.org/download/) and [pnpm](https://pnpm.io/installation).
 
-### Dependencies
-
-Most of these are for [CoC](https://github.com/neoclide/coc.nvim):
-
-- [pnpm](https://pnpm.io/installation)
-- [Node.js](https://nodejs.org/download/)
-
-### Optional
-
-Project search:
-
-- [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
-- [Ack](https://beyondgrep.com/install/)
-
-Live preview for web work: [Bracey](https://github.com/turbio/bracey.vim#installation).
-
-Markdown preview:
-
-```
-:source %
-:PluginInstall
-:call mkdp#util#install()
-```
-
-Shell formatting: [shfmt](https://github.com/mvdan/sh).
-
-R: [Nvim-R](https://github.com/jamespeapen/Nvim-R/wiki/Installation).
+Optional: [the_silver_searcher](https://github.com/ggreer/the_silver_searcher), [Ack](https://beyondgrep.com/install/), [Bracey](https://github.com/turbio/bracey.vim#installation), [shfmt](https://github.com/mvdan/sh).
 
 ## Quick start
 
-Linux and macOS:
+Clone into the Neovim config directory, same as Current and Mini.
 
 ```
-git clone https://github.com/AndresMpa/mu-vim-vimscript.git
-cd mu-vim-vimscript && ./install.sh
+git clone https://github.com/AndresMpa/mu-vim-vimscript.git ~/.config/nvim
+cd ~/.config/nvim
+./install.sh
 nvim
 ```
 
-Windows:
-
-```
-cd %LOCALAPPDATA%
-move nvim nvim_old
-git clone https://github.com/AndresMpa/mu-vim-vimscript.git nvim
-nvim
-```
+On a Mac, install [Homebrew](https://brew.sh) first.
 
 Then:
 
@@ -99,7 +67,11 @@ Then:
 :call mkdp#util#install()
 ```
 
+CoC formats JS/TS with **Biome**, HTML/Markdown with Prettier, and Vue with **Volar** (`@yaegassy/coc-volar`). Go is the extra language server.
+
 If you get lost, press `<Space> h h` or open the [cheat sheet](./CheatSheet.md).
+
+On Windows, clone into `%LOCALAPPDATA%\nvim` and run Plug / CoC by hand.
 
 ---
 
@@ -114,7 +86,7 @@ If you get lost, press `<Space> h h` or open the [cheat sheet](./CheatSheet.md).
 | Motion                         | Identantion and syntax     | Utilities                    | Autocomplete                  |
 | ------------------------------ | -------------------------- | ---------------------------- | ----------------------------- |
 | christoomey/vim-tmux-navigator | leafgarland/typescript-vim | iamcco/markdown-preview.nvim | editorconfig/editorconfig-vim |
-| severin-lemaignan/vim-minimap  | maxmellon/vim-jsx-pretty   | terryma/vim-multiple-cursors | wakatime/vim-wakatime         |
+| severin-lemaignan/vim-minimap  | maxmellon/vim-jsx-pretty   | terryma/vim-multiple-cursors |                               |
 | easymotion/vim-easymotion      | pangloss/vim-javascript    | preservim/nerdcommenter      | jiangmiao/auto-pairs          |
 | haya14busa/incsearch.vim       | sheerun/vim-polyglot       | KabbAmine/vCoolor.vim        | tpope/vim-surround            |
 | scrooloose/nerdtree            | kovetskiy/sxhkd-vim        | turbio/bracey.vim            | alvan/vim-closetag            |
