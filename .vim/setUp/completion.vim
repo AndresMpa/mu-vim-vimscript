@@ -1,8 +1,8 @@
 " coc
 autocmd FileType json syntax match Comment +\/\/.\+$+
-"" Prettier, Emmet, HTML, CSS/Less/Sass, Json, JS/TS, Vue, Bash, Rust, Ruby, R, C/C++, PHP, Cmake, Go
-" Rust
+" Biome (JS/TS/JSON/CSS), Prettier (HTML/MD/Vue), tsserver, Go
 let g:coc_global_extensions = [
+  \'coc-biome',
   \'coc-prettier',
   \'coc-emmet',
   \'coc-html',
@@ -11,14 +11,7 @@ let g:coc_global_extensions = [
   \'coc-tsserver',
   \'coc-vetur',
   \'coc-sh',
-  \'coc-rls',
-  \'coc-solargraph',
-  \'coc-r-lsp',
-  \'coc-clangd',
-  \'coc-phpls',
-  \'coc-cmake',
-  \'coc-go',
-  \'coc-rls']
+  \'coc-go']
 
 " UltiSnips
 " Here are the snippets if you need more you can write them here

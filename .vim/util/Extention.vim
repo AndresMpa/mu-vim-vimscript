@@ -113,10 +113,12 @@ endfunction
 
 function! TriggerIdentation()
   let extention = expand('%:e')
+  let biome = ['js', 'jsx', 'ts', 'tsx', 'json', 'css', 'graphql', 'gql']
 
   if extention == "sh"
-    "execute "normal \<Plug>(coc-codeaction)"
     execute ":Shfmt"
+  elseif index(biome, extention) >= 0
+    call CocAction('format')
   else
     execute ":Prettier"
   endif
