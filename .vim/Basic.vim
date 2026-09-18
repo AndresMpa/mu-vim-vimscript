@@ -42,10 +42,4 @@ set completeopt+=noselect
 set completeopt+=noinsert
 set completeopt+=menuone
 
-" Autosave
-" Autosave based on buffer
-"autocmd CursorHold * update
-" Autosave while writting
-autocmd CursorHold,CursorHoldI * update
-
 syntax enable		" Change the natural rgb

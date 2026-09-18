@@ -4,11 +4,15 @@ autocmd VimEnter * ++once
       \   PlugInstall --sync |
       \ endif
 
-" Autosave (Space aw toggles)
+" Autosave (Space aw toggles). Skip Startify, NERDTree, fzf, help, …
 let g:muvim_autosave = 1
 augroup MuVimAutoSave
   autocmd!
-  autocmd CursorHold,CursorHoldI * if get(g:, 'muvim_autosave', 1) | silent! update | endif
+  autocmd CursorHold,CursorHoldI *
+        \ if get(g:, 'muvim_autosave', 1)
+        \ && empty(&buftype) && &modifiable && !&readonly |
+        \   silent! update |
+        \ endif
 augroup END
 
 au BufNewFile,BufRead /*.rasi setf css
