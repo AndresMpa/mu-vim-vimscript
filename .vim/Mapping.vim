@@ -17,7 +17,7 @@ map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 
 " NERDTree
-nmap <leader>n :NERDTreeToggleVCS<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 
 " fzf
 nmap <Leader>ff :Ag<CR>
@@ -46,8 +46,8 @@ nmap <Leader>ga :Git add<Space>
 nmap <Leader>gsw :Git switch<Space>
 nmap <Leader>gco :Git checkout<Space>
 nmap <Leader>gcb :Git checkout -b<Space>
-nmap <Leader>gll :Git pull origin<Space>
-nmap <Leader>gpp :Git push origin<Space>
+nmap <Leader>gll :call GitOnCurrentBranch('pull')<CR>
+nmap <Leader>gpp :call GitOnCurrentBranch('push')<CR>
 
 " To performe different actions
 nnoremap <Leader>ggg :Git<Space>
