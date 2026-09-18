@@ -9,6 +9,7 @@ source $vimcf/Plugin.vim
 
 "Plugins set up
 source $vimcf/setUp/style.vim
+source $vimcf/setUp/greeter.vim
 source $vimcf/setUp/navigation.vim
 source $vimcf/setUp/completion.vim
 source $vimcf/setUp/identation.vim
