@@ -9,7 +9,7 @@ let g:coc_global_extensions = [
   \'coc-css',
   \'coc-json',
   \'coc-tsserver',
-  \'coc-volar',
+  \'@yaegassy/coc-volar',
   \'coc-sh',
   \'coc-go']
 
