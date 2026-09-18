@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Uninstall VimScript user data. Leaves the Neovim binary (and brew/apt packages).
+# Uninstall VimScript user data. Leaves the Neovim binary (and package manager packages).
 #
 # Removes:
 #   - the nvim config directory
