@@ -23,14 +23,13 @@
   </p>
 </div>
 
-# Documentation
+# VimScript (LTS)
 
-Looking for a modular config for nvim orvim? Check this branch. MμVim comes
-with this version, based on VimScript uses a modular orientation to split
-each config file, it makes it easier to extend; this implementation has been
-tested for a couple of years using Web stacks, also some python and dotfiles
+A modular VimScript config for Vim and Neovim. Each concern lives in its own sourced file, which is easier to extend than Mini and still works if you have not moved off Vim.
 
-## Take a look
+For the current Neovim stack, see [Current](https://github.com/AndresMpa/mu-vim). For a single file, see [Mini](https://github.com/AndresMpa/mu-vim-mini).
+
+## Screenshots
 
 ![nvim](./.examples/nvim_0.png)
 ![nvim](./.examples/nvim_1.png)
@@ -40,49 +39,27 @@ tested for a couple of years using Web stacks, also some python and dotfiles
 
 [Example from YouTube](https://youtu.be/9L-k6n9SQds)
 
-Did you like it? If it doesn't check MμVim other two versions,
-[singleFile](https://github.com/AndresMpa/nvim-configuration/tree/singleFile)
-could be easier to follow or if you're looking something more complicated,
-check [Lua version](https://github.com/AndresMpa/nvim-configuration) which
-is core version (Still working on it)
-
 ## Prerequisites
 
-Of course, you need [NeoVim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-or [Vim](https://www.vim.org/download.php) itself, both of them should work just
-right we also need [Plug](https://github.com/junegunn/vim-plug), with is the plugin
-manager
+You need [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) or [Vim](https://www.vim.org/download.php), plus [vim-plug](https://github.com/junegunn/vim-plug).
 
-### Depencencies
+### Dependencies
 
-Most of these one will be required by [CoC](https://github.com/neoclide/coc.nvim),
-if you don't want any of them try switch CoC for any other plugin such as
-[YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+Most of these are for [CoC](https://github.com/neoclide/coc.nvim):
 
 - [pnpm](https://pnpm.io/installation)
-- [nodejs](https://nodejs.org/es/download/)
+- [Node.js](https://nodejs.org/download/)
 
 ### Optional
 
-#### Search engine
+Project search:
 
-Check line by line what we are looking on a file is unnecessary these days so MμVim
-uses a "search engine", this means that you need some extra software to make
-the engine works
-
-- [the_silver_search](https://github.com/ggreer/the_silver_searcher)
+- [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 - [Ack](https://beyondgrep.com/install/)
 
-#### Live server like plugin
+Live preview for web work: [Bracey](https://github.com/turbio/bracey.vim#installation).
 
-This is pretty useful for those who makes web apps; follow step 1; if it doesn't
-work by default (It should)
-
-- [Installation](https://github.com/turbio/bracey.vim#installation)
-
-#### Markdown support
-
-Follow these steps on your init.vim or .vimrc
+Markdown preview:
 
 ```
 :source %
@@ -90,59 +67,39 @@ Follow these steps on your init.vim or .vimrc
 :call mkdp#util#install()
 ```
 
-#### Bash support
+Shell formatting: [shfmt](https://github.com/mvdan/sh).
 
-This version is used to maintain a custom OS, it used to edit bash scripting files,
-that's MμVim has some tools to make Bash code easier to read
+R: [Nvim-R](https://github.com/jamespeapen/Nvim-R/wiki/Installation).
 
-- [shfmt](https://diarioinforme.com/como-usar-shfmt-para-formatear-mejor-los-scripts-de-shell/)
+## Quick start
 
-#### R support
-
-This version supports R language, used more for data scientist
-
-- [R language](https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04/)
-- [Some utils](https://github.com/jamespeapen/Nvim-R/wiki/Installation)
-
-## Quick Start
-
-If you don't know to much about vim or nvim just follow the next steps:
-
-### If you are using Linux or mac
+Linux and macOS:
 
 ```
-git clone https://github.com/AndresMpa/mu-vim.git
-cd nvim-configuration/ && ./install.sh && exit
+git clone https://github.com/AndresMpa/mu-vim-vimscript.git
+cd mu-vim-vimscript && ./install.sh
 nvim
 ```
 
-### If you are using Windows
+Windows:
 
 ```
-cd C:\Users\$USER\AppData\Local\
+cd %LOCALAPPDATA%
 move nvim nvim_old
-git clone https://github.com/AndresMpa/mu-vim.git
-move mu-vim nvim
+git clone https://github.com/AndresMpa/mu-vim-vimscript.git nvim
 nvim
 ```
 
-Now you must being on neovim (or vim) just make the following commands to
-install the plugins and that stuff
+Then:
 
 ```
-<SPACE> + <p> + <i>
-// <ESC>
-:source%
+<Space> p i
+:source %
 :CocInstall
 :call mkdp#util#install()
 ```
 
-That's it, now it should work
-
-#### Note:
-
-If you feel lost inside nvim or vim and you are using this version, just
-press `<SPACE> + <h> + <h>` or check the [Cheat sheet](./CheatSheet.md)
+If you get lost, press `<Space> h h` or open the [cheat sheet](./CheatSheet.md).
 
 ---
 
@@ -169,19 +126,10 @@ press `<SPACE> + <h> + <h>` or check the [Cheat sheet](./CheatSheet.md)
 |                                | z0mbix/vim-shfmt           |                              |                               |
 |                                | jalvesaq/Nvim-R            |                              |                               |
 
-## Recommended apps
-
-There's a couple of apps I recommend you to improve a little your speed:
+## Related tools
 
 - [rofi](https://github.com/davatorium/rofi)
 - [Ulauncher](https://ulauncher.io/)
 - [Zeal](https://zealdocs.org/)
-- [Vimium](https://addons.mozilla.org/es/firefox/addon/vimium-ff/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+- [Vimium](https://addons.mozilla.org/firefox/addon/vimium-ff/)
 - [Arch Linux](https://github.com/AndresMpa/dotfiles)
-
-## Pats on the back
-
-If you are reading this it means that you want to improve your
-velocity or you want to make your own things so, if you start by
-nvim or vim It may be complicated but just at the
-beginning them you'll look like a professional "Ninja Dev"
