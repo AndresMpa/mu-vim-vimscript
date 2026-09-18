@@ -35,6 +35,8 @@ The other two are [Current](https://github.com/AndresMpa/mu-vim) (Lua, Neovim on
 ![nvim](./.examples/nvim_3.png)
 ![nvim](./.examples/nvim_4.png)
 
+Startify is the greeter (`f` find files, `n` file tree, `g` git status).
+
 ## Prerequisites
 
 [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) or [Vim](https://www.vim.org/download.php). The installer pulls vim-plug, Node, and pnpm.
