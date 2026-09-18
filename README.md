@@ -23,11 +23,9 @@
   </p>
 </div>
 
-# VimScript (LTS)
+MμVim is three editor configs. This repository is **VimScript**: modular `.vim` files for Vim and Neovim, the LTS if you have not moved off Vim.
 
-A modular VimScript config for Vim and Neovim. Each concern lives in its own sourced file, which is easier to extend than Mini and still works if you have not moved off Vim.
-
-For the current Neovim stack, see [Current](https://github.com/AndresMpa/mu-vim). For a single file, see [Mini](https://github.com/AndresMpa/mu-vim-mini).
+The other two are [Current](https://github.com/AndresMpa/mu-vim) (Lua, Neovim only) and [Mini](https://github.com/AndresMpa/mu-vim-mini) (one `init.vim`). Docs: [andresmpa.github.io/mu-vim-page](https://andresmpa.github.io/mu-vim-page/).
 
 ## Screenshots
 
@@ -37,17 +35,21 @@ For the current Neovim stack, see [Current](https://github.com/AndresMpa/mu-vim)
 ![nvim](./.examples/nvim_3.png)
 ![nvim](./.examples/nvim_4.png)
 
-[Example from YouTube](https://youtu.be/9L-k6n9SQds)
-
 ## Prerequisites
 
-[Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) or [Vim](https://www.vim.org/download.php), plus [vim-plug](https://github.com/junegunn/vim-plug). CoC needs [Node.js](https://nodejs.org/download/) and [pnpm](https://pnpm.io/installation).
+[Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) or [Vim](https://www.vim.org/download.php). The installer pulls vim-plug, Node, and pnpm.
 
-Optional: [the_silver_searcher](https://github.com/ggreer/the_silver_searcher), [Ack](https://beyondgrep.com/install/), [Bracey](https://github.com/turbio/bracey.vim#installation), [shfmt](https://github.com/mvdan/sh).
+## Quick Start
 
-## Quick start
+| OS | Package manager | Config dir |
+| --- | --- | --- |
+| Linux Arch / Manjaro | pacman | `~/.config/nvim` |
+| Linux Debian / Ubuntu | apt | `~/.config/nvim` |
+| Linux Fedora / RHEL | dnf | `~/.config/nvim` |
+| macOS | [Homebrew](https://brew.sh) | `~/.config/nvim` |
+| Windows | clone by hand | `%LOCALAPPDATA%\nvim` |
 
-Clone into the Neovim config directory, same as Current and Mini.
+Linux and macOS:
 
 ```
 git clone https://github.com/AndresMpa/mu-vim-vimscript.git ~/.config/nvim
@@ -56,47 +58,13 @@ cd ~/.config/nvim
 nvim
 ```
 
-On a Mac, install [Homebrew](https://brew.sh) first.
+On a Mac, install Homebrew first.
 
-Then:
+Then `<Space> p i`, `:source %`, `:CocInstall`, and `:call mkdp#util#install()`. CoC uses **Biome** for JS/TS, Prettier for HTML/Markdown, **Volar** (`@yaegassy/coc-volar`) for Vue, and **Go** as the extra language server.
 
-```
-<Space> p i
-:source %
-:CocInstall
-:call mkdp#util#install()
-```
+Windows: clone into `%LOCALAPPDATA%\nvim` and run Plug / CoC by hand.
 
-CoC formats JS/TS with **Biome**, HTML/Markdown with Prettier, and Vue with **Volar** (`@yaegassy/coc-volar`). Go is the extra language server.
-
-If you get lost, press `<Space> h h` or open the [cheat sheet](./CheatSheet.md).
-
-On Windows, clone into `%LOCALAPPDATA%\nvim` and run Plug / CoC by hand.
-
----
-
-## Summary of plugins
-
-| Color schema          | Icon theme                     |
-| --------------------- | ------------------------------ |
-| (Using) Default       | vim-airline/vim-airline-themes |
-| morhetz/gruvbox       | vim-airline/vim-airline        |
-| kamykn/dark-theme.vim | ryanoasis/vim-devicons         |
-
-| Motion                         | Identantion and syntax     | Utilities                    | Autocomplete                  |
-| ------------------------------ | -------------------------- | ---------------------------- | ----------------------------- |
-| christoomey/vim-tmux-navigator | leafgarland/typescript-vim | iamcco/markdown-preview.nvim | editorconfig/editorconfig-vim |
-| severin-lemaignan/vim-minimap  | maxmellon/vim-jsx-pretty   | terryma/vim-multiple-cursors |                               |
-| easymotion/vim-easymotion      | pangloss/vim-javascript    | preservim/nerdcommenter      | jiangmiao/auto-pairs          |
-| haya14busa/incsearch.vim       | sheerun/vim-polyglot       | KabbAmine/vCoolor.vim        | tpope/vim-surround            |
-| scrooloose/nerdtree            | kovetskiy/sxhkd-vim        | turbio/bracey.vim            | alvan/vim-closetag            |
-| junegunn/fzf.vim               | jparise/vim-graphql        | mhinz/vim-signify            | sirver/ultisnips              |
-| mileszs/ack.vim                | Yggdroot/indentLine        | ap/vim-css-color             |                               |
-|                                | rust-lang/rust.vim         | tpope/vim-repeat             |                               |
-|                                | tpope/vim-fugitive         |                              |                               |
-|                                | neoclide/coc.nvim          |                              |                               |
-|                                | z0mbix/vim-shfmt           |                              |                               |
-|                                | jalvesaq/Nvim-R            |                              |                               |
+`<Space> h h` lists maps. Native motions: [CheatSheet.md](./CheatSheet.md). Plugins are declared in `.vim/Plugin.vim`.
 
 ## Related tools
 
