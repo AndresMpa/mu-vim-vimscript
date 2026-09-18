@@ -10,6 +10,7 @@ source $vimcf/Plugin.vim
 "Plugins set up
 source $vimcf/setUp/style.vim
 source $vimcf/setUp/greeter.vim
+execute 'source' fnamemodify($MYVIMRC, ':p:h') . '/themes/apply.vim'
 source $vimcf/setUp/navigation.vim
 source $vimcf/setUp/completion.vim
 source $vimcf/setUp/identation.vim

@@ -12,8 +12,7 @@ Plug 'vim-airline/vim-airline'                          " Bar theme
 Plug 'vim-airline/vim-airline-themes'				            " Airline themes
 
 " Nvim
-Plug 'morhetz/gruvbox', { 'as': 'gruvbox' }	            " Nvim theme
-"Plug 'kamykn/dark-theme.vim'
+" Themes live in themes/*.vim (deep-ocean, gruvbox, mini) — no colorscheme plugin.
 
 " Start screen
 Plug 'mhinz/vim-startify'
