@@ -43,3 +43,13 @@ set completeopt+=noinsert
 set completeopt+=menuone
 
 syntax enable		" Change the natural rgb
+
+" Startify reads viminfo when the plugin loads. Set this before Plugin.vim.
+let g:startify_enable_unsafe = 1
+if has('nvim')
+  silent! call mkdir(stdpath('state') . '/shada', 'p')
+  set shada=!,'100,<50,s10,h
+else
+  silent! call mkdir(expand('~/.vim'), 'p')
+  set viminfo='100,<50,s10,h,n~/.vim/viminfo
+endif
