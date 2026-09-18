@@ -41,6 +41,7 @@ if !exists('g:airline_powerline_fonts')
 endif
 
 " THEME
+let g:muvim_default_colorscheme = 'gruvbox'
 colorscheme gruvbox
 
 let g:gruvbox_color_column='bg0'

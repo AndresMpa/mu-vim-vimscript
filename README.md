@@ -75,6 +75,12 @@ cd ~/.config/nvim
 ./delete.sh
 ```
 
+Does not remove `~/.config/muvim` (your themes).
+
+## Themes
+
+Copy `themes/muvim.vim` to `~/.config/muvim/themes/my-theme.vim` and edit the hex values. `<Space> t h` cycles shipped + your palettes. `:MuvimTheme name` picks one; `:MuvimTheme none` restores gruvbox. The choice is kept in `~/.config/muvim/active` and is shared with Current and Mini.
+
 `<Space> h h` lists maps. Native motions: [CheatSheet.md](./CheatSheet.md). Plugins are declared in `.vim/Plugin.vim`.
 
 ## Related tools
