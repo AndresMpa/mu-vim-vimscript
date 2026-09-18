@@ -1,6 +1,6 @@
 " coc
 autocmd FileType json syntax match Comment +\/\/.\+$+
-" Biome (JS/TS/JSON/CSS), Prettier (HTML/MD/Vue), tsserver, Go
+" Biome (JS/TS/JSON/CSS), Prettier (HTML/MD), Volar (Vue 3), tsserver, Go
 let g:coc_global_extensions = [
   \'coc-biome',
   \'coc-prettier',
@@ -9,7 +9,7 @@ let g:coc_global_extensions = [
   \'coc-css',
   \'coc-json',
   \'coc-tsserver',
-  \'coc-vetur',
+  \'coc-volar',
   \'coc-sh',
   \'coc-go']
 
