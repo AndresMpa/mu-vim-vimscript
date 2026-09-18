@@ -64,6 +64,15 @@ Then `<Space> p i`, `:source %`, `:CocInstall`, and `:call mkdp#util#install()`.
 
 Windows: clone into `%LOCALAPPDATA%\nvim` and run Plug / CoC by hand.
 
+## Uninstall
+
+Removes the config, vim-plug, CoC, cache, and `old-nvim`. Leaves Neovim and Homebrew/apt packages.
+
+```
+cd ~/.config/nvim
+./delete.sh
+```
+
 `<Space> h h` lists maps. Native motions: [CheatSheet.md](./CheatSheet.md). Plugins are declared in `.vim/Plugin.vim`.
 
 ## Related tools
