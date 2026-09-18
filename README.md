@@ -79,7 +79,7 @@ Does not remove `~/.config/muvim` (your themes).
 
 ## Themes
 
-Shipped palettes (no extra theme plugins): **deep-ocean**, **gruvbox** (VimScript default), **mini**. Copy one to `~/.config/muvim/themes/my-theme.vim` and edit the hex. `<Space> t h` cycles. `:MuvimTheme name` picks one; `:MuvimTheme none` restores this config's default. The choice is kept in `~/.config/muvim/active` and is shared with Current and Mini.
+Shipped palettes (no extra theme plugins): **deep-ocean**, **oceanic**, **palenight**, **darker**, **gruvbox** (VimScript default), **mini**, **nord**, **dracula**, **tokyonight**, **catppuccin**, **onedark**. File icons follow the palette. Copy one to `~/.config/muvim/themes/my-theme.vim` and edit the hex. `<Space> t h` cycles. `:MuvimTheme name` picks one; `:MuvimTheme none` restores this config's default. The choice is kept in `~/.config/muvim/active` and is shared with Current and Mini.
 
 `<Space> h h` lists maps. Native motions: [CheatSheet.md](./CheatSheet.md). Plugins are declared in `.vim/Plugin.vim`.
 
