@@ -1,3 +1,9 @@
+" First launch: install plugins if the plugged dir is empty.
+autocmd VimEnter * ++once
+      \ if exists(':PlugInstall') && !isdirectory(expand('~/.config/nvim/plugged/coc.nvim')) |
+      \   PlugInstall --sync |
+      \ endif
+
 " Autosave (Space aw toggles)
 let g:muvim_autosave = 1
 augroup MuVimAutoSave
