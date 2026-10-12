@@ -54,7 +54,7 @@ Startify is the greeter (`f` find files, `n` file tree, `g` git status).
 Linux and macOS:
 
 ```
-git clone https://github.com/AndresMpa/mu-vim-vimscript.git ~/.config/nvim
+git clone https://github.com/AndresMpa/mu-vim-vimscript.git ~/.config/vim
 cd ~/.config/nvim
 ./install.sh
 nvim
